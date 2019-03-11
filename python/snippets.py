@@ -28,3 +28,8 @@ def plot_scatter_two_lists(list1, list2, list1_label, list2_label):
     fig_size[1] = 12
     plt.rcParams["figure.figsize"] = fig_size
     plt.show()
+
+wav_scp_path = resources_path + "wav.scp"
+with open(wav_scp_path, 'a') as f:
+    for utterance_id, transcription in wav_scp_entries.items():
+        f.write(utterance_id + " " + transcription + "\n")
